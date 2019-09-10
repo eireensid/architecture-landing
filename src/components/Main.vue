@@ -40,11 +40,33 @@
       </div>
     </section>
     <section>
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-3">
+            <img class="img-fluid idea" src="img/idea.png" alt="idea">
+          </div>
+          <div class="col-3">
+            <img class="img-fluid" src="img/concept.png" alt="concept">
+          </div>
+          <div class="col-3">
+            <img class="img-fluid" src="img/design.png" alt="design">
+          </div>
+          <div class="col-3">
+            <img class="img-fluid" src="img/develop.png" alt="develop">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
       <div class="container">
         <div class="row no-gutters">
-          <div class="col-12">
-            <h6>How we work</h6>
+          <div class="col-12 h-line-blue-text">
+            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
+            <span class="blue-text">How we work</span>
+            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
           </div>
+        </div>
+        <div class="row no-gutters">
           <div class="col-4">
             <span>Dexterity</span>
           </div>
@@ -54,6 +76,51 @@
           <div class="col-4">
             <span>Parthnership</span>
           </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-12 h-line-blue-text">
+            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
+            <span class="blue-text">Latest projects</span>
+            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-6">
+            <img class="img-fluid latest-projects" src="img/latest-projects.png" alt="stairs">
+          </div>
+          <div class="col-6">
+            <h5>Modern art gallery<br>Warsaw, Poland</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
+              Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat,
+              quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
+            <p>Case study</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="row no-gutters">
+        <div class="col latest-project-block">
+          <img class="img-fluid" src="img/latest-project1.png" alt="1">
+          <img class="img-fluid" src="img/latest-project2.png" alt="2">
+          <img class="img-fluid" src="img/latest-project3.png" alt="3">
+          <img class="img-fluid" src="img/latest-project4.png" alt="4">
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="row no-gutters">
+        <div class="col d-flex justify-content-around">
+          <img class="img-fluid" src="img/zeus.png" alt="zeus">
+          <img class="img-fluid" src="img/p.png" alt="p">
+          <img class="img-fluid" src="img/cratia.png" alt="cratia">
+          <img class="img-fluid" src="img/e.png" alt="e">
+          <img class="img-fluid" src="img/luna.png" alt="luna">
+          <img class="img-fluid" src="img/n.png" alt="n">
         </div>
       </div>
     </section>
@@ -125,7 +192,7 @@ export default {
     position: absolute;
     left: 20%;
     top: 85%;
-    width: 55%;
+    width: 45%;
   }
   .grey {
     color: $greyColor;
@@ -156,5 +223,28 @@ export default {
     position: absolute;
     top: -70%;
     right: 0%;
+  }
+  .blue-text {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #97d1eb;
+    justify-content: center;
+    display: flex;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+  }
+  .h-line-blue-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .h-line {
+    max-height: 1px;
+    margin: 10px;
+    margin-bottom: 12px;
+  }
+  .latest-project-block {
+    display: flex;
+    justify-content: center;
   }
 </style>
