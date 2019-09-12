@@ -43,7 +43,7 @@
       <div class="container-fluid">
         <div class="row no-gutters">
           <div class="col-3">
-            <img class="img-fluid idea" src="img/idea.png" alt="idea">
+            <div class="idea" :style="{'background-image': 'url(img/idea.png)'}"></div>
           </div>
           <div class="col-3">
             <img class="img-fluid" src="img/concept.png" alt="concept">
@@ -67,7 +67,10 @@
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-4">
+          <div class="col-12" :style="{'background-image': 'url(img/background.png)'}">
+            <img class="img-fluid" src="img/dexterity-team-partnership.png" alt="line">
+          </div>
+          <!-- <div class="col-4">
             <span>Dexterity</span>
           </div>
           <div class="col-4">
@@ -75,7 +78,7 @@
           </div>
           <div class="col-4">
             <span>Parthnership</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -89,38 +92,74 @@
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-6">
+          <div class="col-6 latest-left">
             <img class="img-fluid latest-projects" src="img/latest-projects.png" alt="stairs">
           </div>
           <div class="col-6">
-            <h5>Modern art gallery<br>Warsaw, Poland</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
+            <h5 class="latest-right modern-art">Modern art gallery<br>Warsaw, Poland</h5>
+            <p class="third-text latest-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
               Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat,
               quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
-            <p>Case study</p>
+            <button class="latest-right btn-grey-line">Case study</button>
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="row no-gutters">
-        <div class="col latest-project-block">
-          <img class="img-fluid" src="img/latest-project1.png" alt="1">
-          <img class="img-fluid" src="img/latest-project2.png" alt="2">
-          <img class="img-fluid" src="img/latest-project3.png" alt="3">
-          <img class="img-fluid" src="img/latest-project4.png" alt="4">
+      <div class="container">
+        <div class="row no-gutters mt-4 mb-2">
+          <div class="col latest-project-block">
+            <img class="img-fluid mr-4" src="img/latest-project1.png" alt="1">
+            <img class="img-fluid mr-4" src="img/latest-project2.png" alt="2">
+            <img class="img-fluid mr-4" src="img/latest-project3.png" alt="3">
+            <img class="img-fluid" src="img/latest-project4.png" alt="4">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="row no-gutters">
-        <div class="col d-flex justify-content-around">
-          <img class="img-fluid" src="img/zeus.png" alt="zeus">
-          <img class="img-fluid" src="img/p.png" alt="p">
-          <img class="img-fluid" src="img/cratia.png" alt="cratia">
-          <img class="img-fluid" src="img/e.png" alt="e">
-          <img class="img-fluid" src="img/luna.png" alt="luna">
-          <img class="img-fluid" src="img/n.png" alt="n">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col d-flex justify-content-around brands">
+            <img class="img-fluid" src="img/zeus.png" alt="zeus">
+            <img class="img-fluid" src="img/p.png" alt="p">
+            <img class="img-fluid" src="img/cratia.png" alt="cratia">
+            <img class="img-fluid" src="img/e.png" alt="e">
+            <img class="img-fluid" src="img/luna.png" alt="luna">
+            <img class="img-fluid" src="img/n.png" alt="n">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container before-footer">
+        <div class="row no-gutters">
+          <div class="col-7">
+            <ul>
+              <li class="add-menu">Contact us</li>
+              <li class="add-menu">Phone</li>
+              <li class="add-menu">E-mail</li><br>
+              <label for="name" class="add-input">Name</label>
+              <input type="text" id="name"><br>
+              <label for="phone" class="add-input">Phone</label>
+              <input type="text" id="phone"><br>
+              <label for="email" class="add-input">E-mail</label>
+              <input type="text" id="email"><br>
+              <label for="message" class="add-textarea">Message</label><br>
+              <textarea name="message" id="message" cols="70" rows="10"></textarea><br>
+              <button class="btn-grey-line">Send</button>
+            </ul>
+          </div>
+          <div class="col-5">
+            <img class="img-fluid" src="img/contact.png" alt="glass">
+          </div>
         </div>
       </div>
     </section>
@@ -232,6 +271,22 @@ export default {
     display: flex;
     letter-spacing: 0.2em;
     font-weight: 600;
+    margin: {
+      top: 50px;
+      bottom: 50px;
+    }
+  }
+  .add-input {
+    color: #e6e7ec;
+    font-weight: bold;
+    font-size: 1.8em;
+    letter-spacing: 0.03em;
+  }
+  .add-textarea {
+    color: #e6e7ec;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: 0.03em;
   }
   .h-line-blue-text {
     display: flex;
@@ -246,5 +301,58 @@ export default {
   .latest-project-block {
     display: flex;
     justify-content: center;
+  }
+  .latest-left {
+    margin-left: -120px;
+  }
+  .latest-right {
+    margin-left: 120px;
+  }
+  .modern-art {
+    font-weight: bold;
+    font-size: 2.2em;
+    letter-spacing: 0.07em;
+    padding-top: 50px;
+  }
+  .add-menu {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    color: $greyColor;
+    &:hover {
+      color: #97d1eb;
+      text-decoration: underline;
+    }
+  }
+  .btn-grey-line {
+    color: $greyColor;
+    background: #fff;
+    border: 2px solid $greyColor;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: bold;
+    padding: 10px 30px;
+  }
+  .idea {
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+  }
+  .third-text {
+    color: $greyColor;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 2.0em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .brands {
+    margin: {
+      top: 100px;
+      bottom: 100px;
+    }
+  }
+  .before-footer {
+    margin-bottom: 50px;
   }
 </style>
