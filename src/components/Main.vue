@@ -35,6 +35,7 @@
           <div class="col-6">
             <h1>We create <span class="lower-letter"><br>cool ideas</span></h1>
             <img class="img-fluid cool-ideas" src="img/cool-ideas.png" alt="house">
+            <!-- <img class="img-fluid house-border" src="img/house.svg" alt="border"> -->
           </div>
         </div>
       </div>
@@ -117,7 +118,7 @@
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row">
+        <div class="row no-gutters">
           <div class="col">
             <hr>
           </div>
@@ -141,24 +142,29 @@
     <section>
       <div class="container before-footer">
         <div class="row no-gutters">
-          <div class="col-7">
-            <ul>
-              <li class="add-menu">Contact us</li>
-              <li class="add-menu">Phone</li>
-              <li class="add-menu">E-mail</li><br>
-              <label for="name" class="add-input">Name</label>
-              <input type="text" id="name"><br>
-              <label for="phone" class="add-input">Phone</label>
-              <input type="text" id="phone"><br>
-              <label for="email" class="add-input">E-mail</label>
-              <input type="text" id="email"><br>
-              <label for="message" class="add-textarea">Message</label><br>
-              <textarea name="message" id="message" cols="70" rows="10"></textarea><br>
-              <button class="btn-grey-line">Send</button>
-            </ul>
+          <div class="col-7 leftside-form">
+            <form>
+              <ul>
+                <li class="add-menu">Contact us</li>
+                <li class="add-menu">Phone</li>
+                <li class="add-menu">E-mail</li><br>
+                <label for="name" class="add-input">Name</label>
+                <input type="text" id="name"><br>
+                <label for="phone" class="add-input">Phone</label>
+                <input type="text" id="phone"><br>
+                <label for="email" class="add-input">E-mail</label>
+                <input type="text" id="email"><br>
+                <label for="message" class="add-textarea">Message</label><br>
+                <textarea name="message" id="message" cols="70" rows="10"></textarea><br>
+                <button class="btn-grey-line">Send</button>
+              </ul>
+            </form>
           </div>
           <div class="col-5">
             <img class="img-fluid" src="img/contact.png" alt="glass">
+          </div>
+          <div class="col-12">
+            <img class="img-fluid form-border" src="img/form.svg" alt="border">
           </div>
         </div>
       </div>
@@ -303,10 +309,10 @@ export default {
     justify-content: center;
   }
   .latest-left {
-    margin-left: -120px;
+    margin-left: -140px;
   }
   .latest-right {
-    margin-left: 120px;
+    margin-left: 140px;
   }
   .modern-art {
     font-weight: bold;
@@ -354,5 +360,18 @@ export default {
   }
   .before-footer {
     margin-bottom: 50px;
+  }
+  // .house-border {
+  //   position: absolute;
+  // }
+  .form-border {
+    position: absolute;
+    bottom: 10%;
+  }
+  .leftside-form {
+    margin-top: 100px;
+  }
+  ul {
+    padding-left: 70px;
   }
 </style>
