@@ -9,17 +9,16 @@
               <p>Selene.</p>
             </div>
           </div>
-          <div class="col-xl-8 offset-xl-1 col-lg-8 offset-lg-1 col-md-8 offset-md-1 col-sm">
+          <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-7 offset-md-2 col-sm">
             <ul class="nav">
               <li class="nav-item"><a class="nav-link" href="#">home</a></li>
               <li class="nav-item"><a class="nav-link" href="#">about us</a></li>
               <li class="nav-item"><a class="nav-link" href="#">projects</a></li>
               <li class="nav-item"><a class="nav-link" href="#">clients</a></li>
               <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">blog</a></li>
             </ul>
           </div>
-          <div class="col-xl-1 col-lg-1 col-md-1 col-sm">
+          <div class="col-xl-1 col-lg-1 col-md-1 col-sm col-find">
             <img src="img/Search.png" class="search" alt="search">
           </div>
         </div>
@@ -73,5 +72,8 @@ export default {
     top: 63px;
     left: 90px;
     font-weight: bold;
+  }
+  .col-find {
+    display: flex;
   }
 </style>

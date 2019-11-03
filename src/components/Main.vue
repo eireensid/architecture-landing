@@ -11,16 +11,16 @@
           <div class="col-11 heading">
             <span class="doe">John Doe</span>
             <div class="img-h1">
-              <img class="img-fluid" src="img/01.png" alt="page">
+              <img class="img-fluid blue-rect" src="img/blue-rect.png" alt="page">
               <h1>Architecture<br><span class="lower-letter">aims at eternity</span></h1>
               <img class="img-fluid blue-line" src="img/blue-line.png" alt="line">
             </div>
-            <ul class="hero-pages">
+            <!-- <ul class="hero-pages">
               <li class="grey">01</li>
               <li class="grey">02</li>
               <li class="grey">03</li>
               <li class="grey">04</li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>
@@ -28,12 +28,12 @@
     <section>
       <div class="container-fluid second-section">
         <div class="row no-gutters">
-          <div class="col-4 offset-2">
+          <div class="col-4 offset-1">
             <h3>Curabitur voluptat</h3>
             <p class="second-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue. Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat, quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
           </div>
-          <div class="col-6">
-            <h1>We create <span class="lower-letter"><br>cool ideas</span></h1>
+          <div class="col-6 offset-1">
+            <h1 class="we-create">We create <span class="lower-letter"><br>cool ideas</span></h1>
             <img class="img-fluid cool-ideas" src="img/cool-ideas.png" alt="house">
             <!-- <img class="img-fluid house-border" src="img/house.svg" alt="border"> -->
           </div>
@@ -45,15 +45,19 @@
         <div class="row no-gutters">
           <div class="col-3">
             <div class="idea" :style="{'background-image': 'url(img/idea.png)'}"></div>
+            <span class="photo-text">Idea</span>
           </div>
           <div class="col-3">
-            <img class="img-fluid" src="img/concept.png" alt="concept">
+            <img class="img-fluid concept" src="img/concept.png" alt="concept">
+            <span class="photo-text concept-text">Concept</span>
           </div>
           <div class="col-3">
-            <img class="img-fluid" src="img/design.png" alt="design">
+            <img class="img-fluid design" src="img/design.png" alt="design">
+            <span class="photo-text design-text">Design</span>
           </div>
           <div class="col-3">
-            <img class="img-fluid" src="img/develop.png" alt="develop">
+            <img class="img-fluid develop" src="img/develop.png" alt="develop">
+            <span class="photo-text develop-text">Develop</span>
           </div>
         </div>
       </div>
@@ -69,7 +73,7 @@
         </div>
         <div class="row no-gutters">
           <div class="col-12" :style="{'background-image': 'url(img/background.png)'}">
-            <img class="img-fluid" src="img/dexterity-team-partnership.png" alt="line">
+            <img class="img-fluid" src="img/dexterity-team-partnership.png">
           </div>
           <!-- <div class="col-4">
             <span>Dexterity</span>
@@ -101,7 +105,7 @@
             <p class="third-text latest-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
               Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat,
               quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
-            <button class="latest-right btn-grey-line">Case study</button>
+            <!-- <button class="latest-right btn-grey-line">Case study</button> -->
           </div>
         </div>
       </div>
@@ -128,7 +132,7 @@
     <section>
       <div class="container">
         <div class="row no-gutters">
-          <div class="col d-flex justify-content-around brands">
+          <div class="col d-flex justify-content-around align-items-center brands">
             <img class="img-fluid" src="img/zeus.png" alt="zeus">
             <img class="img-fluid" src="img/p.png" alt="p">
             <img class="img-fluid" src="img/cratia.png" alt="cratia">
@@ -145,9 +149,9 @@
           <div class="col-7 leftside-form">
             <form>
               <ul>
-                <li class="add-menu">Contact us</li>
-                <li class="add-menu">Phone</li>
-                <li class="add-menu">E-mail</li><br>
+                <li class="add-menu">Contact us</li><br>
+                <!-- <li class="add-menu">Phone</li>
+                <li class="add-menu">E-mail</li><br> -->
                 <label for="name" class="add-input">Name</label>
                 <input type="text" id="name"><br>
                 <label for="phone" class="add-input">Phone</label>
@@ -193,14 +197,22 @@ export default {
       margin-right: 40px;
     }
   }
+  .background {
+    padding-left: 15px;
+  }
   h1 {
-    font-size: 5.7em;
+    font-size: 5.6em;
     color: rgba(0, 0, 0, 255);
     font-weight: bold;
     margin-left: 38px;
     position: relative;
     z-index: 1;
     letter-spacing: 0.05em;
+    padding-top: 40px;
+  }
+  .we-create {
+    margin-left: -60px;
+    padding-top: 5px;
   }
   .container-fluid {
     padding-right: 0;
@@ -213,7 +225,7 @@ export default {
   }
   .heading {
     position: absolute;
-    top: 71%;
+    top: 50%;
     left: 7%;
     // width: 100%;
   }
@@ -228,16 +240,19 @@ export default {
   }
   .doe {
     position: absolute;
-    left: 21%;
+    left: 20.5%;
     color: $greyColor;
     font-size: 1.125em;
     font-weight: bold;
   }
   .blue-line {
     position: absolute;
-    left: 20%;
-    top: 85%;
-    width: 45%;
+    left: 19%;
+    top: 100%;
+    width: 50%;
+  }
+  .blue-rect {
+    padding-top: 40px;
   }
   .grey {
     color: $greyColor;
@@ -253,7 +268,7 @@ export default {
     color: $greyColor;
     font-size: 3.2em;
     font-weight: bold;
-    padding-left: -2%;
+    margin-left: -10px;
   }
   .second-text {
     color: $greyColor;
@@ -343,6 +358,26 @@ export default {
     background-size: cover;
     height: 100%;
     background-position: center;
+    position: relative;
+  }
+  .photo-text {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    font-size: 3.750em;
+    color: white;
+    background: gray;
+    padding: 0 10px;
+
+  }
+  .concept-text {
+    left: 14%;
+  }
+  .design-text {
+    left: 20%;
+  }
+  .develop-text {
+    left: 15%;
   }
   .third-text {
     color: $greyColor;
