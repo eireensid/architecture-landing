@@ -45,7 +45,6 @@
         <div class="row no-gutters">
           <div class="col-3 photos">
             <div class="idea photos" :style="{'background-image': 'url(img/idea.png)'}"></div>
-            <img class="img-fluid concept" src="img/concept.png" alt="concept">
             <span class="photo-text">Idea</span>
           </div>
           <div class="col-3 photos">
@@ -101,7 +100,7 @@
             <img class="img-fluid h-line" src="img/h-line.png" alt="line">
           </div>
         </div>
-        <div class="row no-gutters">
+        <div class="row no-gutters pb-2">
           <div class="col-6 latest-left">
             <img class="img-fluid latest-projects" src="img/latest-projects.png" alt="stairs">
             <img class="blue-arrow-left" src="img/blue-arrow-left.png">
@@ -117,7 +116,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="row no-gutters mt-4 mb-2">
+        <div class="row no-gutters mt-4 mb-4">
           <div class="col latest-project-block">
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project1.png" alt="1">
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project2.png" alt="2">
@@ -154,18 +153,26 @@
           <div class="col-7 leftside-form">
             <form>
               <ul>
-                <li class="add-menu">Contact us</li><br>
+                <li class="add-menu">Contact us</li>
                 <!-- <li class="add-menu">Phone</li>
                 <li class="add-menu">E-mail</li><br> -->
-                <label for="name" class="add-input">Name</label>
-                <input type="text" id="name"><br>
-                <label for="phone" class="add-input">Phone</label>
-                <input type="text" id="phone"><br>
-                <label for="email" class="add-input">E-mail</label>
-                <input type="text" id="email"><br>
+                <div class="grey-line">
+                  <label for="name" class="add-input">Name</label>
+                  <input type="text" id="name">
+                </div>
+                <div class="grey-line">
+                  <label for="phone" class="add-input">Phone</label>
+                  <input type="text" id="phone">
+                </div>
+                <div class="grey-line">
+                  <label for="email" class="add-input">E-mail</label>
+                  <input type="text" id="email">
+                </div>
                 <label for="message" class="add-textarea">Message</label><br>
-                <textarea name="message" id="message" cols="70" rows="10"></textarea><br>
-                <button class="btn-grey-line">Send</button>
+                <textarea name="message" id="message" cols="70" rows="9"></textarea>
+                <div class="d-flex justify-content-center button-div">
+                  <button class="btn-grey-line">Send</button>
+                </div>
               </ul>
             </form>
           </div>
@@ -297,20 +304,20 @@ export default {
     letter-spacing: 0.2em;
     font-weight: 600;
     margin: {
-      top: 50px;
-      bottom: 50px;
+      top: 70px;
+      bottom: 70px;
     }
   }
   .add-input {
     color: #e6e7ec;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.6em;
     letter-spacing: 0.03em;
   }
   .add-textarea {
     color: #e6e7ec;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.4em;
     letter-spacing: 0.03em;
   }
   .h-line-blue-text {
@@ -365,22 +372,25 @@ export default {
   }
   .add-menu {
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.3em;
+    font-size: 0.9em;
     font-weight: bold;
     color: $greyColor;
+    margin-bottom: 40px;
     &:hover {
       color: #97d1eb;
-      text-decoration: underline;
+      border-bottom: 1px solid #97d1eb;
     }
   }
   .btn-grey-line {
     color: $greyColor;
     background: #fff;
-    border: 2px solid $greyColor;
+    border: 2px solid #e6e7ec;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     font-weight: bold;
-    padding: 10px 30px;
+    padding: 15px 50px 10px 50px;
+    margin-top: 30px;
   }
   .photos:hover {
     outline: 10px solid #97d1eb;
@@ -400,7 +410,6 @@ export default {
     color: white;
     background: #97d1eb;
     padding: 0 10px;
-
   }
   .concept-text {
     left: 14%;
@@ -425,8 +434,8 @@ export default {
   }
   .brands {
     margin: {
-      top: 100px;
-      bottom: 100px;
+      top: 80px;
+      bottom: 80px;
     }
   }
   .before-footer {
@@ -438,8 +447,22 @@ export default {
   }
   .leftside-form {
     margin-top: 100px;
+    z-index: 100;
   }
   ul {
     padding-left: 70px;
+  }
+  input, textarea {
+    border: none;
+  }
+  textarea {
+    border-bottom: 2px solid #e6e7ec;
+  }
+  .grey-line {
+    border-bottom: 2px solid #e6e7ec;
+    width: 85%;
+  }
+  .button-div {
+    margin-left: -70px;
   }
 </style>
