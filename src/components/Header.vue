@@ -12,10 +12,10 @@
           <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-7 offset-md-2 col-sm">
             <ul class="nav">
               <li class="nav-item"><a class="nav-link" href="#">home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">about us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">clients</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about-us">about us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#clients">clients</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
             </ul>
           </div>
           <div class="col-xl-1 col-lg-1 col-md-1 col-sm col-find">

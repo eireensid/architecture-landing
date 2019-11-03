@@ -26,7 +26,7 @@
       </div>
     </section>
     <section>
-      <div class="container-fluid second-section">
+      <div class="container-fluid second-section" id="about-us">
         <div class="row no-gutters">
           <div class="col-4 offset-1">
             <h3>Curabitur voluptat</h3>
@@ -92,7 +92,7 @@
       </div> -->
     </section>
     <section>
-      <div class="container">
+      <div class="container" id="projects">
         <div class="row no-gutters">
           <div class="col-12 h-line-blue-text">
             <img class="img-fluid h-line" src="img/h-line.png" alt="line">
@@ -134,7 +134,7 @@
       </div>
     </section>
     <section>
-      <div class="container">
+      <div class="container" id="clients">
         <div class="row no-gutters">
           <div class="col d-flex justify-content-around align-items-center brands">
             <img class="img-fluid" src="img/zeus.png" alt="zeus">
@@ -148,7 +148,7 @@
       </div>
     </section>
     <section>
-      <div class="container before-footer">
+      <div class="container before-footer" id="contact">
         <div class="row no-gutters">
           <div class="col-7 leftside-form">
             <form>
@@ -202,7 +202,15 @@ export default {
   * {
     font-family: $fontFamily;
   }
-
+  ul {
+    padding-left: 70px;
+  }
+  input, textarea {
+    border: none;
+  }
+  textarea {
+    border-bottom: 2px solid #e6e7ec;
+  }
   li {
     display: inline-block;
     &:not(:last-child) {
@@ -336,6 +344,7 @@ export default {
     padding: 50px;
     display: flex;
     justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
   }
   .dexterity-team-partnership {
     width: 80%;
@@ -359,7 +368,7 @@ export default {
     justify-content: center;
   }
   .latest-left {
-    margin-left: -140px;
+    margin-left: -160px;
   }
   .latest-right {
     margin-left: 140px;
@@ -448,15 +457,6 @@ export default {
   .leftside-form {
     margin-top: 100px;
     z-index: 100;
-  }
-  ul {
-    padding-left: 70px;
-  }
-  input, textarea {
-    border: none;
-  }
-  textarea {
-    border-bottom: 2px solid #e6e7ec;
   }
   .grey-line {
     border-bottom: 2px solid #e6e7ec;

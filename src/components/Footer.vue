@@ -5,7 +5,7 @@
         <div class="row no-gutters">
           <div class="col d-flex justify-content-center">
             <div class="logo">
-              <img class="img-fluid" src="img/logo-footer.png" alt="logo">
+              <a href="#"><img class="img-fluid" src="img/logo-footer.png" alt="logo"></a>
             </div>
           </div>
         </div>
