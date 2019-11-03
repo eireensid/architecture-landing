@@ -71,21 +71,25 @@
             <img class="img-fluid h-line" src="img/h-line.png" alt="line">
           </div>
         </div>
+      </div>
+      <div class="container-fluid">
         <div class="row no-gutters">
-          <div class="col-12" :style="{'background-image': 'url(img/background.png)'}">
-            <img class="img-fluid" src="img/dexterity-team-partnership.png">
+          <div class="col-12 how-we-work" :style="{'background-image': 'url(img/how-we-work.png)'}">
+            <img class="img-fluid dexterity-team-partnership" src="img/dexterity-team-partnership.png">
           </div>
-          <!-- <div class="col-4">
-            <span>Dexterity</span>
-          </div>
-          <div class="col-4">
-            <span>Team</span>
-          </div>
-          <div class="col-4">
-            <span>Parthnership</span>
-          </div> -->
         </div>
       </div>
+      <!-- <div class="row no-gutters">
+        <div class="col-4">
+          <span>Dexterity</span>
+        </div>
+        <div class="col-4">
+          <span>Team</span>
+        </div>
+        <div class="col-4">
+          <span>Parthnership</span>
+        </div>
+      </div> -->
     </section>
     <section>
       <div class="container">
@@ -319,6 +323,16 @@ export default {
     margin: 10px;
     margin-bottom: 12px;
   }
+  .how-we-work {
+    opacity: 0.4;
+    width: 110%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .dexterity-team-partnership {
+    width: 80%;
+  }
   .latest-project-block {
     display: flex;
     justify-content: center;
@@ -396,9 +410,6 @@ export default {
   .before-footer {
     margin-bottom: 50px;
   }
-  // .house-border {
-  //   position: absolute;
-  // }
   .form-border {
     position: absolute;
     bottom: 10%;
