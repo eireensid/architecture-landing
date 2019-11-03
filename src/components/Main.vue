@@ -43,19 +43,20 @@
     <section>
       <div class="container-fluid">
         <div class="row no-gutters">
-          <div class="col-3">
-            <div class="idea" :style="{'background-image': 'url(img/idea.png)'}"></div>
+          <div class="col-3 photos">
+            <div class="idea photos" :style="{'background-image': 'url(img/idea.png)'}"></div>
+            <img class="img-fluid concept" src="img/concept.png" alt="concept">
             <span class="photo-text">Idea</span>
           </div>
-          <div class="col-3">
+          <div class="col-3 photos">
             <img class="img-fluid concept" src="img/concept.png" alt="concept">
             <span class="photo-text concept-text">Concept</span>
           </div>
-          <div class="col-3">
+          <div class="col-3 photos">
             <img class="img-fluid design" src="img/design.png" alt="design">
             <span class="photo-text design-text">Design</span>
           </div>
-          <div class="col-3">
+          <div class="col-3 photos">
             <img class="img-fluid develop" src="img/develop.png" alt="develop">
             <span class="photo-text develop-text">Develop</span>
           </div>
@@ -103,6 +104,8 @@
         <div class="row no-gutters">
           <div class="col-6 latest-left">
             <img class="img-fluid latest-projects" src="img/latest-projects.png" alt="stairs">
+            <img class="blue-arrow-left" src="img/blue-arrow-left.png">
+            <img class="blue-arrow-right" src="img/blue-arrow-right.png">
           </div>
           <div class="col-6">
             <h5 class="latest-right modern-art">Modern art gallery<br>Warsaw, Poland</h5>
@@ -113,15 +116,13 @@
           </div>
         </div>
       </div>
-    </section>
-    <section>
       <div class="container">
         <div class="row no-gutters mt-4 mb-2">
           <div class="col latest-project-block">
-            <img class="img-fluid mr-4" src="img/latest-project1.png" alt="1">
-            <img class="img-fluid mr-4" src="img/latest-project2.png" alt="2">
-            <img class="img-fluid mr-4" src="img/latest-project3.png" alt="3">
-            <img class="img-fluid" src="img/latest-project4.png" alt="4">
+            <img class="img-fluid latest-project-item mr-4" src="img/latest-project1.png" alt="1">
+            <img class="img-fluid latest-project-item mr-4" src="img/latest-project2.png" alt="2">
+            <img class="img-fluid latest-project-item mr-4" src="img/latest-project3.png" alt="3">
+            <img class="img-fluid latest-project-item" src="img/latest-project4.png" alt="4">
           </div>
         </div>
       </div>
@@ -263,10 +264,9 @@ export default {
     font-size: 1.125em;
     font-weight: bold;
   }
-
   .second-section {
     margin-top: 230px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
   h3 {
     color: $greyColor;
@@ -333,6 +333,20 @@ export default {
   .dexterity-team-partnership {
     width: 80%;
   }
+  .blue-arrow-left {
+    position: absolute;
+    top: 25%;
+    left: 91.5%;
+    z-index: 100;
+    width: 17%;
+  }
+  .blue-arrow-right {
+    position: absolute;
+    top: 50.5%;
+    left: 91.5%;
+    z-index: 100;
+    width: 17%;
+  }
   .latest-project-block {
     display: flex;
     justify-content: center;
@@ -368,6 +382,10 @@ export default {
     font-weight: bold;
     padding: 10px 30px;
   }
+  .photos:hover {
+    outline: 10px solid #97d1eb;
+    outline-offset: -20px;
+  }
   .idea {
     background-size: cover;
     height: 100%;
@@ -380,7 +398,7 @@ export default {
     left: 30%;
     font-size: 3.750em;
     color: white;
-    background: gray;
+    background: #97d1eb;
     padding: 0 10px;
 
   }
@@ -400,6 +418,10 @@ export default {
     line-height: 2.0em;
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .latest-project-item:hover {
+    outline: 10px solid #97d1eb;
+    outline-offset: -10px;
   }
   .brands {
     margin: {

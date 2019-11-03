@@ -75,5 +75,6 @@ export default {
   }
   .col-find {
     display: flex;
+    justify-content: flex-end;
   }
 </style>
