@@ -79,17 +79,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row no-gutters">
-        <div class="col-4">
-          <span>Dexterity</span>
-        </div>
-        <div class="col-4">
-          <span>Team</span>
-        </div>
-        <div class="col-4">
-          <span>Parthnership</span>
-        </div>
-      </div> -->
     </section>
     <section>
       <div class="container" id="projects">
@@ -102,9 +91,9 @@
         </div>
         <div class="row no-gutters pb-2">
           <div class="col-6 latest-left">
-            <img class="img-fluid latest-projects" src="img/latest-projects.png" alt="stairs">
-            <img class="blue-arrow-left" src="img/blue-arrow-left.png">
-            <img class="blue-arrow-right" src="img/blue-arrow-right.png">
+            <img class="img-fluid latest-projects" :src="curImageSrc" alt="stairs">
+            <img class="blue-arrow-left" src="img/blue-arrow-left.png" @click="goBack">
+            <img class="blue-arrow-right" src="img/blue-arrow-right.png" @click="goForward">
           </div>
           <div class="col-6">
             <h5 class="latest-right modern-art">Modern art gallery<br>Warsaw, Poland</h5>
@@ -118,10 +107,11 @@
       <div class="container">
         <div class="row no-gutters mt-4 mb-4">
           <div class="col latest-project-block">
-            <img class="img-fluid latest-project-item mr-4" src="img/latest-project1.png" alt="1">
+            <!-- <img class="img-fluid latest-project-item mr-4" src="img/latest-project1.png" alt="1">
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project2.png" alt="2">
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project3.png" alt="3">
-            <img class="img-fluid latest-project-item" src="img/latest-project4.png" alt="4">
+            <img class="img-fluid latest-project-item" src="img/latest-project4.png" alt="4"> -->
+            <img v-for="image in images" @click="changeLargeImg(image.imageSrc)" class="img-fluid latest-project-item" :src="image.imageSrc" :key="image.id">
           </div>
         </div>
       </div>
@@ -177,7 +167,7 @@
             </form>
           </div>
           <div class="col-5">
-            <img class="img-fluid" src="img/contact.png" alt="glass">
+            <img class="img-fluid img-contact" src="img/contact.png" alt="glass">
           </div>
           <div class="col-12">
             <img class="img-fluid form-border" src="img/form.svg" alt="border">
@@ -190,7 +180,45 @@
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  data () {
+    return {
+      curImageSrc: 'img/latest-projects.png',
+      imageIndex: 3,
+      images: [
+        {
+          imageSrc: 'img/latest-project1.png'
+        },
+        {
+          imageSrc: 'img/latest-project2.png'
+        },
+        {
+          imageSrc: 'img/latest-project3.png'
+        },
+        {
+          imageSrc: 'img/latest-project4.png'
+        }
+      ]
+    }
+  },
+  methods: {
+    changeLargeImg (src) {
+      this.curImageSrc = src
+    },
+    goBack () {
+      this.imageIndex = this.imageIndex - 1
+      if (this.imageIndex < 0) {
+        this.imageIndex = this.images.length - 1
+      }
+      let curImage = this.images[this.imageIndex]
+      this.curImageSrc = curImage.imageSrc
+    },
+    goForward () {
+      this.imageIndex = (this.imageIndex + 1) % this.images.length
+      let curImage = this.images[this.imageIndex]
+      this.curImageSrc = curImage.imageSrc
+    }
+  }
 }
 </script>
 
@@ -363,6 +391,9 @@ export default {
     z-index: 100;
     width: 17%;
   }
+  .latest-projects {
+    width: 400%;
+  }
   .latest-project-block {
     display: flex;
     justify-content: center;
@@ -441,6 +472,9 @@ export default {
     outline: 10px solid #97d1eb;
     outline-offset: -10px;
   }
+  .latest-project-item:not(:last-child) {
+    margin-right: 20px;
+  }
   .brands {
     margin: {
       top: 80px;
@@ -464,5 +498,61 @@ export default {
   }
   .button-div {
     margin-left: -70px;
+  }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 5.5em;
+    }
+    .blue-rect {
+      width: 17%;
+    }
+    .we-create {
+      margin-left: -90px;
+      font-size: 5.3em;
+    }
+    textarea {
+      width: 85%;
+      height: 80px;
+    }
+    .blue-arrow-left {
+      width: 15%;
+      top: 23.5%;
+    }
+    .blue-arrow-right {
+      width: 15%;
+      top: 40%;
+    }
+    .modern-art {
+      padding-top: 0;
+    }
+    .photo-text {
+      font-size: 3em;
+    }
+    .cool-ideas {
+      top: -40%;
+    }
+  }
+  @media (max-width: 1000px) {
+    .cool-ideas {
+      top: -20%;
+    }
+    .we-create {
+      margin-left: -70px;
+      font-size: 4.5em;
+      margin-top: 60px;
+    }
+    .latest-right {
+      width: 450px;
+    }
+    .blue-arrow-right {
+      top: 43%;
+    }
+    textarea {
+      height: 0px;
+    }
+    .img-contact {
+      padding-top: 35px;
+    }
   }
 </style>
