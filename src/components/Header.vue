@@ -9,7 +9,7 @@
               <p>Selene.</p>
             </div>
           </div>
-          <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-7 offset-md-2 col-sm">
+          <div class="col-xl-6 offset-xl-2 col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm">
             <ul class="nav">
               <li class="nav-item"><a class="nav-link" href="#">home</a></li>
               <li class="nav-item"><a class="nav-link" href="#about-us">about us</a></li>
@@ -18,8 +18,11 @@
               <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
             </ul>
           </div>
-          <div class="col-xl-1 col-lg-1 col-md-1 col-sm col-find">
-            <img src="img/Search.png" class="search" alt="search">
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm col-find">
+            <div class="form-find">
+              <input type="text" class="input" placeholder="Поиск">
+              <img src="img/Search.png" class="search" alt="search" aria-hidden="true">
+            </div>
           </div>
         </div>
       </div>
@@ -75,6 +78,6 @@ export default {
   }
   .col-find {
     display: flex;
-    justify-content: flex-end;
+    // justify-content: flex-end;
   }
 </style>

@@ -111,7 +111,7 @@
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project2.png" alt="2">
             <img class="img-fluid latest-project-item mr-4" src="img/latest-project3.png" alt="3">
             <img class="img-fluid latest-project-item" src="img/latest-project4.png" alt="4"> -->
-            <img v-for="image in images" @click="changeLargeImg(image.imageSrc)" class="img-fluid latest-project-item" :src="image.imageSrc" :key="image.id">
+            <img v-for="(image, ind) in images" @click="changeLargeImg(image.imageSrc, ind)" :class="{'latest-project-item_clicked': image.active}" class="img-fluid latest-project-item" :src="image.imageSrc" :key="image.id">
           </div>
         </div>
       </div>
@@ -148,15 +148,15 @@
                 <li class="add-menu">E-mail</li><br> -->
                 <div class="grey-line">
                   <label for="name" class="add-input">Name</label>
-                  <input type="text" id="name">
+                  <input type="text" id="name" required>
                 </div>
                 <div class="grey-line">
                   <label for="phone" class="add-input">Phone</label>
-                  <input type="text" id="phone">
+                  <input type="text" id="phone" required pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
                 </div>
                 <div class="grey-line">
                   <label for="email" class="add-input">E-mail</label>
-                  <input type="text" id="email">
+                  <input type="text" id="email" required pattern="\S+@[a-z]+.[a-z]+">
                 </div>
                 <label for="message" class="add-textarea">Message</label><br>
                 <textarea name="message" id="message" cols="70" rows="9"></textarea>
@@ -187,23 +187,32 @@ export default {
       imageIndex: 3,
       images: [
         {
-          imageSrc: 'img/latest-project1.png'
+          imageSrc: 'img/latest-project1.png',
+          active: false
         },
         {
-          imageSrc: 'img/latest-project2.png'
+          imageSrc: 'img/latest-project2.png',
+          active: false
         },
         {
-          imageSrc: 'img/latest-project3.png'
+          imageSrc: 'img/latest-project3.png',
+          active: false
         },
         {
-          imageSrc: 'img/latest-project4.png'
+          imageSrc: 'img/latest-project4.png',
+          active: false
         }
       ]
     }
   },
   methods: {
-    changeLargeImg (src) {
+    changeLargeImg (src, ind) {
       this.curImageSrc = src
+      this.images.forEach(image => {
+        image.active = false
+      })
+      let curImage = this.images[ind]
+      curImage.active = true
     },
     goBack () {
       this.imageIndex = this.imageIndex - 1
@@ -468,7 +477,7 @@ export default {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .latest-project-item:hover {
+  .latest-project-item:hover, .latest-project-item_clicked {
     outline: 10px solid #97d1eb;
     outline-offset: -10px;
   }
