@@ -20,8 +20,8 @@
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm col-find">
             <div class="form-find">
-              <input type="text" class="input" placeholder="Поиск">
-              <img src="img/Search.png" class="search" alt="search" aria-hidden="true">
+              <input v-model="searchStr" type="text" class="input" id="text-to-find" placeholder="Поиск">
+              <img @click="findOnPage" src="img/Search.png" class="search" alt="search">
             </div>
           </div>
         </div>
@@ -32,7 +32,50 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data () {
+    return {
+      searchStr: ''
+    }
+  },
+  methods: {
+    findOnPage () {
+      let oldA = document.getElementById('search-anchor')
+      if (oldA) {
+        oldA.parentNode.removeChild(oldA)
+      }
+      var all = document.querySelectorAll('body *')
+      console.log(all.length)
+      for (var i = 0; i < all.length; i++) {
+        let tagElem = all[i]
+        if (tagElem.nodeType !== Node.ELEMENT_NODE) {
+          continue
+        }
+        const children = tagElem.childNodes
+
+        for (var j = 0; j < children.length; j++) {
+          let childElem = children[j]
+
+          if (childElem.nodeType === Node.TEXT_NODE) {
+            let text = childElem.nodeValue.toLowerCase()
+            let index = text.indexOf(this.searchStr.toLowerCase())
+            if (index !== -1) {
+              console.log(childElem)
+
+              let a = document.createElement('a')
+              a.setAttribute('id', 'search-anchor')
+              a.setAttribute('name', 'search-anchor')
+
+              childElem.parentNode.insertBefore(a, childElem)
+
+              window.location = '#search-anchor'
+              return
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </script>
 

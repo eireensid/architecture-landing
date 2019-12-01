@@ -107,10 +107,6 @@
       <div class="container">
         <div class="row no-gutters mt-4 mb-4">
           <div class="col latest-project-block">
-            <!-- <img class="img-fluid latest-project-item mr-4" src="img/latest-project1.png" alt="1">
-            <img class="img-fluid latest-project-item mr-4" src="img/latest-project2.png" alt="2">
-            <img class="img-fluid latest-project-item mr-4" src="img/latest-project3.png" alt="3">
-            <img class="img-fluid latest-project-item" src="img/latest-project4.png" alt="4"> -->
             <img v-for="(image, ind) in images" @click="changeLargeImg(image.imageSrc, ind)" :class="{'latest-project-item_clicked': image.active}" class="img-fluid latest-project-item" :src="image.imageSrc" :key="image.id">
           </div>
         </div>
