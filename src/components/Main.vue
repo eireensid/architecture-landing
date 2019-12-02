@@ -243,6 +243,7 @@ export default {
   }
   textarea {
     border-bottom: 2px solid #e6e7ec;
+    resize: none;
   }
   li {
     display: inline-block;

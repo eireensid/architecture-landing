@@ -10,18 +10,19 @@
             </div>
           </div>
           <div class="col-xl-6 offset-xl-2 col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm">
-            <ul class="nav">
+            <ul v-if="large" class="nav">
               <li class="nav-item"><a class="nav-link" href="#">home</a></li>
               <li class="nav-item"><a class="nav-link" href="#about-us">about us</a></li>
               <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
               <li class="nav-item"><a class="nav-link" href="#clients">clients</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
             </ul>
+            <img v-else class="hamburger" src="img/hamburger.png" alt="logo">
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm col-find">
             <div class="form-find">
-              <input v-model="searchStr" type="text" class="input" id="text-to-find" placeholder="Поиск">
-              <img @click="findOnPage" src="img/Search.png" class="search" alt="search">
+              <input v-if="showInput" v-model="searchStr" type="text" class="input" id="text-to-find" placeholder="Поиск">
+              <img @click="findOnPage" v-on:click="showInput = !showInput" src="img/Search.png" class="search" alt="search">
             </div>
           </div>
         </div>
@@ -35,41 +36,55 @@ export default {
   name: 'Header',
   data () {
     return {
-      searchStr: ''
+      searchStr: '',
+      showInput: false,
+      large: true
     }
   },
+  created () {
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.onResize)
+  },
   methods: {
+    onResize () {
+      this.large = window.innerWidth >= 600
+    },
     findOnPage () {
-      let oldA = document.getElementById('search-anchor')
-      if (oldA) {
-        oldA.parentNode.removeChild(oldA)
-      }
-      var all = document.querySelectorAll('body *')
-      console.log(all.length)
-      for (var i = 0; i < all.length; i++) {
-        let tagElem = all[i]
-        if (tagElem.nodeType !== Node.ELEMENT_NODE) {
-          continue
+      if (this.show === true) {
+        let oldA = document.getElementById('search-anchor')
+        if (oldA) {
+          oldA.parentNode.removeChild(oldA)
         }
-        const children = tagElem.childNodes
+        var all = document.querySelectorAll('body *')
+        console.log(all.length)
+        for (var i = 0; i < all.length; i++) {
+          let tagElem = all[i]
+          if (tagElem.nodeType !== Node.ELEMENT_NODE) {
+            continue
+          }
+          const children = tagElem.childNodes
 
-        for (var j = 0; j < children.length; j++) {
-          let childElem = children[j]
+          for (var j = 0; j < children.length; j++) {
+            let childElem = children[j]
 
-          if (childElem.nodeType === Node.TEXT_NODE) {
-            let text = childElem.nodeValue.toLowerCase()
-            let index = text.indexOf(this.searchStr.toLowerCase())
-            if (index !== -1) {
-              console.log(childElem)
+            if (childElem.nodeType === Node.TEXT_NODE) {
+              let text = childElem.nodeValue.toLowerCase()
+              let index = text.indexOf(this.searchStr.toLowerCase())
+              if (index !== -1) {
+                // console.log(childElem)
 
-              let a = document.createElement('a')
-              a.setAttribute('id', 'search-anchor')
-              a.setAttribute('name', 'search-anchor')
+                let a = document.createElement('a')
+                a.setAttribute('id', 'search-anchor')
+                a.setAttribute('name', 'search-anchor')
 
-              childElem.parentNode.insertBefore(a, childElem)
+                childElem.parentNode.insertBefore(a, childElem)
 
-              window.location = '#search-anchor'
-              return
+                window.location = '#search-anchor'
+                return
+              }
             }
           }
         }
@@ -110,7 +125,10 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    // border-bottom: 7px solid #F2F2F2;
+  }
+  input {
+    border: none;
+    outline: none;
   }
   .logo p {
     font-size: 30px;
@@ -119,8 +137,13 @@ export default {
     left: 90px;
     font-weight: bold;
   }
+  .hamburger {
+    width: 50px;
+    height: 50px;
+    filter: opacity(0.9);
+  }
   .col-find {
     display: flex;
-    // justify-content: flex-end;
+    justify-content: flex-end;
   }
 </style>
