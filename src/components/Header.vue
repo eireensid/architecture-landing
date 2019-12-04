@@ -17,7 +17,16 @@
               <li class="nav-item"><a class="nav-link" href="#clients">clients</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
             </ul>
-            <img v-else class="hamburger" src="img/hamburger.png" alt="logo">
+            <img v-else class="hamburger" @click="showMobileMenu" src="img/hamburger.png" alt="logo">
+            <div :style="{ display: display }" class="mobile-menu row">
+              <ul v-if="!showMenu" class="nav col-12">
+                <li class="nav-item"><a class="nav-link" href="#">home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-us">about us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#clients">clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
+              </ul>
+            </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm col-find">
             <div class="form-find">
@@ -38,13 +47,22 @@ export default {
     return {
       searchStr: '',
       showInput: false,
-      large: true
+      large: true,
+      showMenu: false,
+      display: 'none'
     }
   },
   created () {
     this.onResize()
   },
   methods: {
+    showMobileMenu () {
+      if (this.display === 'none') {
+        this.display = 'block'
+      } else {
+        this.display = 'none'
+      }
+    },
     onResize () {
       this.large = window.innerWidth >= 600
       console.log(this.large)
@@ -143,5 +161,8 @@ export default {
   .col-find {
     display: flex;
     justify-content: flex-end;
+  }
+  .mobile-menu {
+    position: absolute;
   }
 </style>
