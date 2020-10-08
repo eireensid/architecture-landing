@@ -264,6 +264,9 @@ export default {
     letter-spacing: 0.05em;
     padding-top: 40px;
   }
+  .first-section {
+    position: relative;
+  }
   .we-create {
     margin-left: -60px;
     padding-top: 5px;
@@ -279,7 +282,7 @@ export default {
   }
   .heading {
     position: absolute;
-    top: 50%;
+    top: 25%; // 50%
     left: 7%;
     // width: 100%;
   }
