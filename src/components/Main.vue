@@ -51,7 +51,7 @@
       <div class="fourth-section">
         <div class="container">
           <div class="row no-gutters">
-            <h3 class="fourth-section__blue-text">How we work</h3>
+            <h3 class="fourth-section__blue-text h3-title">How we work</h3>
           </div>
         </div>
         <div class="container-fluid fourth-section__how-we-work-wr" id="scene">
@@ -66,48 +66,40 @@
       </div>
     </section>
     <section>
-      <div class="container" id="projects">
-        <div class="row no-gutters">
-          <div class="col-12 h-line-blue-text">
-            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
-            <span class="blue-text">Latest projects</span>
-            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
+      <div class="fifth-section" id="projects">
+        <div class="cobtainer">
+          <div class="row no-gutters">
+            <h3 class="fifth-section__blue-text h3-title">Latest projects</h3>
           </div>
         </div>
-        <div class="row no-gutters pb-2">
-          <div class="col-6 latest-left">
-            <img class="img-fluid latest-projects" :src="curImageSrc" alt="stairs">
-            <img class="blue-arrow-left" src="img/blue-arrow-left.png" @click="goBack">
-            <img class="blue-arrow-right" src="img/blue-arrow-right.png" @click="goForward">
-          </div>
-          <div class="col-6">
-            <h5 class="latest-right modern-art">Modern art gallery<br>Warsaw, Poland</h5>
-            <p class="third-text latest-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
-              Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat,
-              quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
-            <!-- <button class="latest-right btn-grey-line">Case study</button> -->
+        <div class="container-fluid fifth-section__container-fluid">
+          <div class="row no-gutters pb-2">
+            <div class="col-5 fifth-section__latest-left">
+              <img class="img-fluid fifth-section__latest-projects" :src="curImageSrc" alt="stairs">
+              <img class="blue-arrow-left" src="img/blue-arrow-left.png" @click="goBack">
+              <img class="blue-arrow-right" src="img/blue-arrow-right.png" @click="goForward">
+            </div>
+            <div class="col-5">
+              <h5 class="fifth-section__latest-right fifth-section__modern-art">Modern art gallery<br>Warsaw, Poland</h5>
+              <p class="fifth-section__third-text fifth-section__latest-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue.
+                Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat,
+                quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
+            </div>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row no-gutters mt-4 mb-4">
-          <div class="col latest-project-block">
-            <img v-for="(image, ind) in images" @click="changeLargeImg(image.imageSrc, ind)" :class="{'latest-project-item_clicked': image.active}" class="img-fluid latest-project-item" :src="image.imageSrc" :key="image.id">
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col">
-            <hr>
+          <div class="col fifth-section__latest-project-block">
+            <img v-for="(image, ind) in images" @click="changeLargeImg(image.imageSrc, ind)" :class="{'latest-project-item_clicked': image.active}" class="img-fluid fifth-section__latest-project-item" :src="image.imageSrc" :key="image.id">
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="container" id="clients">
+      <div class="container sixth-section" id="clients">
         <div class="row no-gutters">
-          <div class="col d-flex justify-content-around align-items-center brands">
+          <div class="col d-flex justify-content-around align-items-center sixth-section__brands">
             <img class="img-fluid" src="img/zeus.png" alt="zeus">
             <img class="img-fluid" src="img/p.png" alt="p">
             <img class="img-fluid" src="img/cratia.png" alt="cratia">
@@ -119,39 +111,36 @@
       </div>
     </section>
     <section>
-      <div class="container before-footer" id="contact">
+      <div class="container seventh-section" id="contact">
         <div class="row no-gutters">
-          <div class="col-7 leftside-form">
-            <form>
-              <ul>
-                <li class="add-menu">Contact us</li>
-                <!-- <li class="add-menu">Phone</li>
-                <li class="add-menu">E-mail</li><br> -->
-                <div class="grey-line">
-                  <label for="name" class="add-input">Name</label>
+          <div class="col">
+            <form class="seventh-section__form">
+              <div class="seventh-section__form-left">
+                <span class="seventh-section__top">Contact us</span>
+                <div class="seventh-section__grey-line">
+                  <label for="name" class="seventh-section__add-input">Name</label>
                   <input type="text" id="name" required>
                 </div>
-                <div class="grey-line">
-                  <label for="phone" class="add-input">Phone</label>
+                <div class="seventh-section__grey-line">
+                  <label for="phone" class="seventh-section__add-input">Phone</label>
                   <input type="text" id="phone" required pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
                 </div>
-                <div class="grey-line">
-                  <label for="email" class="add-input">E-mail</label>
+                <div class="seventh-section__grey-line">
+                  <label for="email" class="seventh-section__add-input">E-mail</label>
                   <input type="text" id="email" required pattern="\S+@[a-z]+.[a-z]+">
                 </div>
-                <label for="message" class="add-textarea">Message</label><br>
-                <textarea name="message" id="message" cols="70" rows="9"></textarea>
-                <div class="d-flex justify-content-center button-div">
-                  <button class="btn-grey-line">Send</button>
+                <label for="message" class="seventh-section__add-textarea">Message</label><br>
+                <textarea name="message" id="message" cols="60" rows="8"></textarea>
+                <div class="d-flex justify-content-center seventh-section__button-div">
+                  <button class="seventh-section__btn-grey-line">Send</button>
                 </div>
-              </ul>
+              </div>
+              <div class="seventh-section__form-right">
+                <div class="seventh-section__form-right-img-wr">
+                  <img class="img-fluid seventh-section__img-contact" src="img/contact.png">
+                </div>  
+              </div>
             </form>
-          </div>
-          <div class="col-5">
-            <img class="img-fluid img-contact" src="img/contact.png" alt="glass">
-          </div>
-          <div class="col-12">
-            <img class="img-fluid form-border" src="img/form.svg" alt="border">
           </div>
         </div>
       </div>
@@ -225,19 +214,18 @@ export default {
   }
   input, textarea {
     border: none;
+    outline: none;
   }
   textarea {
     border-bottom: 2px solid #e6e7ec;
     resize: none;
+    outline: none;
   }
   li {
     display: inline-block;
     &:not(:last-child) {
       margin-right: 40px;
     }
-  }
-  .background {
-    padding-left: 15px;
   }
   h1 {
     font-size: 5.6em;
@@ -249,47 +237,10 @@ export default {
     letter-spacing: 0.05em;
     padding-top: 40px;
   }
-  .first-section {
-    position: relative;
-  }
 
   .container-fluid {
     padding-right: 0;
     padding-left: 0;
-  }
-  .img-h1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .heading {
-    position: absolute;
-    top: 25%; // 50%
-    left: 7%;
-    // width: 100%;
-  }
-
-  .hero-pages {
-    position: absolute;
-    left: 7%;
-    top: 150%;
-    letter-spacing: 0.05em;
-  }
-  .doe {
-    position: absolute;
-    left: 20.5%;
-    color: $greyColor;
-    font-size: 1.125em;
-    font-weight: bold;
-  }
-  .blue-line {
-    position: absolute;
-    left: 19%;
-    top: 100%;
-    width: 50%;
-  }
-  .blue-rect {
-    padding-top: 40px;
   }
 
   .first-section {
@@ -361,168 +312,36 @@ export default {
     }
   }
 
-  .fourth-section {
-    &__blue-text {
-      text-transform: uppercase;
-      font-size: 0.9em;
-      color: #97d1eb;
-      // justify-content: center;
-      // display: flex;
-      letter-spacing: 0.2em;
-      font-weight: 600;
-      padding: {
-        top: 70px;
-        bottom: 70px;
-      }
-      margin: 0 auto;
-      position: relative;
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: -110px;
-        top: 48%;
-        border: 1px solid #97d1eb;
-        width: 100px;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        right: -110px;
-        top: 48%;
-        border: 1px solid #97d1eb;
-        width: 100px;
-      }
-    }
-
-    &__how-we-work-wr {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
-    }
-
-    &__how-we-work {
-      opacity: 0.4;
-      width: 90%;
-      justify-content: center;
-      padding: 50px;
-      display: flex;
-      height: 230px;
-      align-items: flex-end;
-      margin: 0 auto;
-    }
-
-    &__how-we-work-item {
-      font-weight: bold;
-      font-size: 3.750em;
-      display: flex;
-    }
-
-    &__how-we-work-item:nth-child(2) {
-      justify-content: center;
-    }
-
-    &__how-we-work-item:last-child {
-      justify-content: flex-end;
-    }
-  }
-
-  .blue-text {
+  .h3-title {
     text-transform: uppercase;
     font-size: 0.9em;
     color: #97d1eb;
-    justify-content: center;
-    display: flex;
     letter-spacing: 0.2em;
     font-weight: 600;
-    // margin: 70px auto;
-  }
-  .add-input {
-    color: #e6e7ec;
-    font-weight: bold;
-    font-size: 1.6em;
-    letter-spacing: 0.03em;
-  }
-  .add-textarea {
-    color: #e6e7ec;
-    font-weight: bold;
-    font-size: 1.4em;
-    letter-spacing: 0.03em;
-  }
-  // .h-line-blue-text {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-  // .h-line {
-  //   max-height: 1px;
-  //   margin: 10px;
-  //   margin-bottom: 12px;
-  // }
-  // .how-we-work {
-  //   opacity: 0.4;
-  //   width: 110%;
-  //   padding: 50px;
-  //   display: flex;
-  //   justify-content: center;
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
-  // }
-  // .dexterity-team-partnership {
-  //   width: 80%;
-  // }
-  .blue-arrow-left {
-    position: absolute;
-    top: 25%;
-    left: 91.5%;
-    z-index: 100;
-    width: 17%;
-  }
-  .blue-arrow-right {
-    position: absolute;
-    top: 50.5%;
-    left: 91.5%;
-    z-index: 100;
-    width: 17%;
-  }
-  .latest-projects {
-    width: 400%;
-  }
-  .latest-project-block {
-    display: flex;
-    justify-content: center;
-  }
-  .latest-left {
-    margin-left: -160px;
-  }
-  .latest-right {
-    margin-left: 140px;
-  }
-  .modern-art {
-    font-weight: bold;
-    font-size: 2.2em;
-    letter-spacing: 0.07em;
-    padding-top: 50px;
-  }
-  .add-menu {
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: $greyColor;
-    margin-bottom: 40px;
-    &:hover {
-      color: #97d1eb;
-      border-bottom: 1px solid #97d1eb;
+    padding: {
+      top: 70px;
+      bottom: 70px;
     }
-  }
-  .btn-grey-line {
-    color: $greyColor;
-    background: #fff;
-    border: 2px solid #e6e7ec;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    font-weight: bold;
-    padding: 15px 50px 10px 50px;
-    margin-top: 30px;
+    margin: 0 auto;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -110px;
+      top: 48%;
+      border: 1px solid #97d1eb;
+      width: 100px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: -110px;
+      top: 48%;
+      border: 1px solid #97d1eb;
+      width: 100px;
+    }
   }
 
   .third-section {
@@ -572,99 +391,179 @@ export default {
     }
   }
 
-  // .third-text {
-  //   color: $greyColor;
-  //   font-size: 0.9em;
-  //   font-weight: bold;
-  //   line-height: 2.0em;
-  //   padding-top: 20px;
-  //   padding-bottom: 20px;
-  // }
-  .latest-project-item:hover, .latest-project-item_clicked {
-    outline: 10px solid #97d1eb;
-    outline-offset: -10px;
-  }
-  .latest-project-item:not(:last-child) {
-    margin-right: 20px;
-  }
-  .brands {
-    margin: {
-      top: 80px;
-      bottom: 80px;
+  .fourth-section {
+    &__how-we-work-wr {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.60);
     }
-  }
-  .before-footer {
-    margin-bottom: 50px;
-  }
-  .form-border {
-    position: absolute;
-    bottom: 10%;
-  }
-  .leftside-form {
-    margin-top: 100px;
-    z-index: 100;
-  }
-  .grey-line {
-    border-bottom: 2px solid #e6e7ec;
-    width: 85%;
-  }
-  .button-div {
-    margin-left: -70px;
+
+    &__how-we-work {
+      opacity: 0.4;
+      width: 90%;
+      justify-content: center;
+      padding: 50px;
+      display: flex;
+      height: 230px;
+      align-items: flex-end;
+      margin: 0 auto;
+    }
+
+    &__how-we-work-item {
+      font-weight: bold;
+      font-size: 3.750em;
+      display: flex;
+    }
+
+    &__how-we-work-item:nth-child(2) {
+      justify-content: center;
+    }
+
+    &__how-we-work-item:last-child {
+      justify-content: flex-end;
+    }
   }
 
-  @media (max-width: 1200px) {
-    h1 {
-      font-size: 5.5em;
+  .fifth-section {
+    &__container-fluid {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        width: 100%;
+        content: '';
+        border: 1px solid #bcc0cd54;
+        left: 0;
+        top: 600px;
+      }
     }
-    .blue-rect {
-      width: 17%;
+
+    &__latest-projects {
+      width: 400%;
+      height: 385px;
+      object-fit: cover;
     }
-    .we-create {
-      margin-left: -90px;
-      font-size: 5.3em;
+
+    &__latest-right {
+      margin-left: 140px;
     }
-    textarea {
-      width: 85%;
-      height: 80px;
+
+    &__modern-art {
+      font-weight: bold;
+      font-size: 2.2em;
+      letter-spacing: 0.07em;
+      padding-top: 50px;
     }
-    .blue-arrow-left {
-      width: 15%;
-      top: 23.5%;
+
+    &__latest-project-block {
+      display: flex;
+      justify-content: center;
     }
-    .blue-arrow-right {
-      width: 15%;
-      top: 40%;
+
+    &__latest-project-item:hover, .latest-project-item_clicked {
+      outline: 10px solid #97d1eb;
+      outline-offset: -10px;
+      transition: all .25s ease-in-out;
     }
-    .modern-art {
-      padding-top: 0;
-    }
-    .photo-text {
-      font-size: 3em;
-    }
-    .cool-ideas {
-      top: -40%;
+    &__latest-project-item:not(:last-child) {
+      margin-right: 20px;
     }
   }
-  @media (max-width: 1000px) {
-    .cool-ideas {
-      top: -20%;
+
+  .sixth-section {
+    &__brands {
+      margin: {
+        top: 80px;
+        bottom: 80px;
+      }
     }
-    .we-create {
-      margin-left: -70px;
-      font-size: 4.5em;
-      margin-top: 60px;
+  }
+
+  .blue-arrow-left {
+    position: absolute;
+    top: 25%;
+    left: 91.5%;
+    z-index: 100;
+    width: 17%;
+  }
+  .blue-arrow-right {
+    position: absolute;
+    top: 50.5%;
+    left: 91.5%;
+    z-index: 100;
+    width: 17%;
+  }
+
+  .seventh-section {
+    margin-bottom: 50px;
+
+    &__form {
+      display: flex;
+      justify-content: space-between;
+      border: 10px solid #97d1eb;
     }
-    .latest-right {
-      width: 450px;
+
+    &__top {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #97d1eb;
+      margin-bottom: 40px;
+      display: block;
     }
-    .blue-arrow-right {
-      top: 43%;
+
+    &__form-left {
+      margin-top: 80px;
+      padding-left: 80px;
     }
-    textarea {
-      height: 0px;
+
+    &__form-right-img-wr {
+      height: 630px;
+      width: 490px;
     }
-    .img-contact {
-      padding-top: 35px;
+
+    &__img-contact {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__grey-line {
+      border-bottom: 2px solid #e6e7ec;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__add-input {
+      color: #e6e7ec;
+      font-weight: bold;
+      font-size: 1.6em;
+      letter-spacing: 0.03em;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+
+    &__add-textarea {
+      color: #e6e7ec;
+      font-weight: bold;
+      font-size: 1.4em;
+      letter-spacing: 0.03em;
+    }
+
+    &__btn-grey-line {
+      color: $greyColor;
+      background: #fff;
+      border: 2px solid #e6e7ec;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: bold;
+      padding: 15px 50px 10px 50px;
+      margin-top: 30px;
+      transition: all 0.25 ease-out;
+
+      &:hover {
+        border: 2px solid #97d1eb;
+        color: #97d1eb;
+      }
     }
   }
 </style>
