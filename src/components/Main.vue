@@ -1,26 +1,11 @@
 <template>
   <div id="app">
-    <section>
+   <section>
       <div class="container-fluid first-section">
         <div class="row no-gutters">
-          <div class="col-xl-8 offset-xl-4 col-lg-8 offset-lg-4 col-md-8 offset-md-4 col-sm">
-            <img class="img-fluid background" src="img/Photo1.png" alt="">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-11 heading">
-            <span class="doe">John Doe</span>
-            <div class="img-h1">
-              <img class="img-fluid blue-rect" src="img/blue-rect.png" alt="page">
-              <h1>Architecture<br><span class="lower-letter">aims at eternity</span></h1>
-              <img class="img-fluid blue-line" src="img/blue-line.png" alt="line">
-            </div>
-            <!-- <ul class="hero-pages">
-              <li class="grey">01</li>
-              <li class="grey">02</li>
-              <li class="grey">03</li>
-              <li class="grey">04</li>
-            </ul> -->
+          <div class="col-9 first-section__col">
+            <div class="first-section__title-first-letter">A</div>
+            <h1 class="first-section__title">Architecture<span class="first-section__title--lower-letter"> aims at eternity</span></h1>
           </div>
         </div>
       </div>
@@ -30,52 +15,52 @@
         <div class="row no-gutters">
           <div class="col-4 offset-1">
             <h3>Curabitur voluptat</h3>
-            <p class="second-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue. Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat, quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
+            <p class="second-section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue. Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat, quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor. </p>
           </div>
           <div class="col-6 offset-1">
-            <h1 class="we-create">We create <span class="lower-letter"><br>cool ideas</span></h1>
-            <img class="img-fluid cool-ideas" src="img/cool-ideas.png" alt="house">
+            <h1 class="second-section__we-create wow animate__animated animate__fadeInRight">We create <span class="second-section__lower-letter"><br>cool ideas</span></h1>
+            <img class="img-fluid second-section__cool-ideas wow animate__animated animate__fadeInUpBig" src="img/cool-ideas.png" alt="house">
             <!-- <img class="img-fluid house-border" src="img/house.svg" alt="border"> -->
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="container-fluid">
+      <div class="container-fluid third-section">
         <div class="row no-gutters">
-          <div class="col-3 photos">
-            <div class="idea photos" :style="{'background-image': 'url(img/idea.png)'}"></div>
-            <span class="photo-text">Idea</span>
+          <div class="col-3 third-section__photo">
+            <div class="third-section__idea third-section__photo-item wow animate__animated animate__fadeInUpBig" :style="{'background-image': 'url(img/idea.png)'}"></div>
+            <span class="third-section__photo-text">Idea</span>
           </div>
-          <div class="col-3 photos">
-            <img class="img-fluid concept" src="img/concept.png" alt="concept">
-            <span class="photo-text concept-text">Concept</span>
+          <div class="col-3 third-section__photo">
+            <img class="img-fluid third-section__concept wow animate__animated animate__fadeInUpBig" src="img/concept.png" alt="concept">
+            <span class="third-section__photo-text third-section__concept-text">Concept</span>
           </div>
-          <div class="col-3 photos">
-            <img class="img-fluid design" src="img/design.png" alt="design">
-            <span class="photo-text design-text">Design</span>
+          <div class="col-3 third-section__photo">
+            <img class="img-fluid third-section__design wow animate__animated animate__fadeInUpBig" src="img/design.png" alt="design">
+            <span class="third-section__photo-text third-section__design-text">Design</span>
           </div>
-          <div class="col-3 photos">
-            <img class="img-fluid develop" src="img/develop.png" alt="develop">
-            <span class="photo-text develop-text">Develop</span>
+          <div class="col-3 third-section__photo">
+            <img class="img-fluid third-section__develop wow animate__animated animate__fadeInUpBig" src="img/develop.png" alt="develop">
+            <span class="third-section__photo-text third-section__develop-text">Develop</span>
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-12 h-line-blue-text">
-            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
-            <span class="blue-text">How we work</span>
-            <img class="img-fluid h-line" src="img/h-line.png" alt="line">
+      <div class="fourth-section">
+        <div class="container">
+          <div class="row no-gutters">
+            <h3 class="fourth-section__blue-text">How we work</h3>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-12 how-we-work" :style="{'background-image': 'url(img/how-we-work.png)'}">
-            <img class="img-fluid dexterity-team-partnership" src="img/dexterity-team-partnership.png">
+        <div class="container-fluid fourth-section__how-we-work-wr" id="scene">
+          <div class="row no-gutters">
+            <div class="fourth-section__how-we-work">
+              <span class="col-4 fourth-section__how-we-work-item">Dexterity</span>
+              <span class="col-4 fourth-section__how-we-work-item">Team</span>
+              <span class="col-4 fourth-section__how-we-work-item">Partnership</span>
+            </div>
           </div>
         </div>
       </div>
@@ -267,10 +252,7 @@ export default {
   .first-section {
     position: relative;
   }
-  .we-create {
-    margin-left: -60px;
-    padding-top: 5px;
-  }
+
   .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -286,9 +268,7 @@ export default {
     left: 7%;
     // width: 100%;
   }
-  .lower-letter {
-    font-size: 0.8em;
-  }
+
   .hero-pages {
     position: absolute;
     left: 7%;
@@ -311,35 +291,141 @@ export default {
   .blue-rect {
     padding-top: 40px;
   }
-  .grey {
-    color: $greyColor;
-    font-size: 1.125em;
-    font-weight: bold;
+
+  .first-section {
+    background-image: url('Photo1.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 65.7%;
+    height: 724px;
+    display: flex;
+    align-items: center;
+
+    &__col {
+      display: flex;
+      align-items: center;
+    }
+
+    &__title-first-letter {
+      color: #fff;
+      font-size: 7em;
+      background: #97d1eb;
+      line-height: 1;
+      height: 120px;
+      transform: scale(1.4);
+      margin-left: 100px;
+      padding: 10px 25px;
+    }
+
+    &__title {
+      max-width: 1300px;
+      width: 100%;
+      border-bottom: 10px solid #97d1eb;
+      margin-left: 70px;
+    }
   }
+
   .second-section {
     margin-top: 230px;
     margin-bottom: 150px;
+
+    h3 {
+      color: $greyColor;
+      font-size: 3.2em;
+      font-weight: bold;
+      margin-left: -10px;
+    }
+
+    &__text {
+      color: $greyColor;
+      font-size: 0.9em;
+      font-weight: bold;
+      line-height: 2.0em;
+      padding-top: 40px;
+      text-align: justify;
+      margin-left: -2%;
+    }
+
+    &__we-create {
+      margin-left: -60px;
+      padding-top: 5px;
+    }
+    &__cool-ideas {
+      position: absolute;
+      top: -70%;
+      right: 0%;
+    }
+
+    &__lower-letter {
+      font-size: 0.8em;
+    }
   }
-  h3 {
-    color: $greyColor;
-    font-size: 3.2em;
-    font-weight: bold;
-    margin-left: -10px;
+
+  .fourth-section {
+    &__blue-text {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      color: #97d1eb;
+      // justify-content: center;
+      // display: flex;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+      padding: {
+        top: 70px;
+        bottom: 70px;
+      }
+      margin: 0 auto;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -110px;
+        top: 48%;
+        border: 1px solid #97d1eb;
+        width: 100px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: -110px;
+        top: 48%;
+        border: 1px solid #97d1eb;
+        width: 100px;
+      }
+    }
+
+    &__how-we-work-wr {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
+    }
+
+    &__how-we-work {
+      opacity: 0.4;
+      width: 90%;
+      justify-content: center;
+      padding: 50px;
+      display: flex;
+      height: 230px;
+      align-items: flex-end;
+      margin: 0 auto;
+    }
+
+    &__how-we-work-item {
+      font-weight: bold;
+      font-size: 3.750em;
+      display: flex;
+    }
+
+    &__how-we-work-item:nth-child(2) {
+      justify-content: center;
+    }
+
+    &__how-we-work-item:last-child {
+      justify-content: flex-end;
+    }
   }
-  .second-text {
-    color: $greyColor;
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 2.0em;
-    padding-top: 40px;
-    text-align: justify;
-    margin-left: -2%;
-  }
-  .cool-ideas {
-    position: absolute;
-    top: -70%;
-    right: 0%;
-  }
+
   .blue-text {
     text-transform: uppercase;
     font-size: 0.9em;
@@ -348,10 +434,7 @@ export default {
     display: flex;
     letter-spacing: 0.2em;
     font-weight: 600;
-    margin: {
-      top: 70px;
-      bottom: 70px;
-    }
+    // margin: 70px auto;
   }
   .add-input {
     color: #e6e7ec;
@@ -365,27 +448,27 @@ export default {
     font-size: 1.4em;
     letter-spacing: 0.03em;
   }
-  .h-line-blue-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .h-line {
-    max-height: 1px;
-    margin: 10px;
-    margin-bottom: 12px;
-  }
-  .how-we-work {
-    opacity: 0.4;
-    width: 110%;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
-  }
-  .dexterity-team-partnership {
-    width: 80%;
-  }
+  // .h-line-blue-text {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  // .h-line {
+  //   max-height: 1px;
+  //   margin: 10px;
+  //   margin-bottom: 12px;
+  // }
+  // .how-we-work {
+  //   opacity: 0.4;
+  //   width: 110%;
+  //   padding: 50px;
+  //   display: flex;
+  //   justify-content: center;
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.80);
+  // }
+  // .dexterity-team-partnership {
+  //   width: 80%;
+  // }
   .blue-arrow-left {
     position: absolute;
     top: 25%;
@@ -441,42 +524,62 @@ export default {
     padding: 15px 50px 10px 50px;
     margin-top: 30px;
   }
-  .photos:hover {
-    outline: 10px solid #97d1eb;
-    outline-offset: -20px;
+
+  .third-section {
+    &__photo {
+      &:hover {
+        .third-section__photo-item {
+          transition: all .25s ease-in-out;
+          outline: 10px solid #97d1eb;
+          outline-offset: -20px;
+        }
+
+        img {
+          transition: all .25s ease-in-out;
+          outline: 10px solid #97d1eb;
+          outline-offset: -20px;
+        }
+      }
+    }
+
+    &__idea {
+      background-size: cover;
+      height: 100%;
+      background-position: center;
+      position: relative;
+    }
+
+    &__photo-text {
+      position: absolute;
+      top: 45%;
+      left: 30%;
+      font-size: 3.750em;
+      color: white;
+      background: #97d1eb;
+      padding: 0 10px;
+    }
+
+    &__concept-text {
+      left: 14%;
+    }
+
+    &__design-text {
+      left: 20%;
+    }
+
+    &__develop-text {
+      left: 15%;
+    }
   }
-  .idea {
-    background-size: cover;
-    height: 100%;
-    background-position: center;
-    position: relative;
-  }
-  .photo-text {
-    position: absolute;
-    top: 45%;
-    left: 30%;
-    font-size: 3.750em;
-    color: white;
-    background: #97d1eb;
-    padding: 0 10px;
-  }
-  .concept-text {
-    left: 14%;
-  }
-  .design-text {
-    left: 20%;
-  }
-  .develop-text {
-    left: 15%;
-  }
-  .third-text {
-    color: $greyColor;
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 2.0em;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+
+  // .third-text {
+  //   color: $greyColor;
+  //   font-size: 0.9em;
+  //   font-weight: bold;
+  //   line-height: 2.0em;
+  //   padding-top: 20px;
+  //   padding-bottom: 20px;
+  // }
   .latest-project-item:hover, .latest-project-item_clicked {
     outline: 10px solid #97d1eb;
     outline-offset: -10px;

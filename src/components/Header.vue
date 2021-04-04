@@ -128,6 +128,7 @@ export default {
   }
   a {
     color: black;
+    transition: all .25s ease-in-out;
   }
   a:hover {
     position: relative;
@@ -161,6 +162,9 @@ export default {
   .col-find {
     display: flex;
     justify-content: flex-end;
+  }
+  .input {
+    transition: all .25s ease-in-out;
   }
   .mobile-menu {
     position: absolute;
